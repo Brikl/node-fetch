@@ -62,7 +62,7 @@ function isAbortSignal(signal) {
 		&& typeof signal === 'object'
 		&& Object.getPrototypeOf(signal)
 	);
-	return !!(proto && proto.constructor.name === 'AbortSignal');
+	return proto && proto.constructor.name.startsWith('AbortSignal')
 }
 
 /**
